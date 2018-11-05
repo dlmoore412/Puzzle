@@ -14,12 +14,12 @@ def index():
     cur = conn.cursor()
 
     # Get number of all GET requests
-    sql_all = """SELECT COUNT(*) FROM weblogs;"""
+    sql_all = """SELECT COUNT(*) FROM weblogs.log;"""
     cur.execute(sql_all)
     all = cur.fetchone()[0]
 
     # Get number of all succesful requests
-    sql_success = """SELECT COUNT(*) FROM weblogs WHERE status LIKE \'2__\';"""
+    sql_success = """SELECT COUNT(*) FROM weblogs.log WHERE status LIKE \'2__\';"""
     cur.execute(sql_success)
     success = cur.fetchone()[0]
 
